@@ -3,6 +3,10 @@ using namespace std;
 
 void SistemaSimple(){
 }
+void SistemaDoble(){
+}
+void SistemaSuizo(){
+}
 
 int main(){
     int N, SI=1;
@@ -20,10 +24,10 @@ int main(){
             void SistemaSimple();
             break;
         case 2:
-            cout<<"Este sistema aun no esta disponible";
+            void SistemaDoble();
             break;
         case 3:
-            cout<<"Este sistema aun no esta disponible";
+            void SistemaSuizo();
             break;
         case 4:
             cout<<"SALIENDO DEL PROGRAMA";
