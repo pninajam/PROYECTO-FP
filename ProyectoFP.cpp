@@ -5,6 +5,7 @@ using namespace std;
 struct Entidad {
     string nombre;
     bool eliminado;
+    int perdidas;
 };
 
 void Ronda(Entidad Ent[], int& JoE){
