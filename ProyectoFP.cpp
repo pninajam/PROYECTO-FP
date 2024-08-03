@@ -61,6 +61,10 @@ void SistemaSimple(){
         }
     }
 }
+
+void RondaDoble(Entidad Ent[], int& JoE, bool cuadroPerdedores = false){
+}
+
 void SistemaDoble(){
     int JoE;
     cout<<"Ingrese el numero de participantes:"<<endl;
