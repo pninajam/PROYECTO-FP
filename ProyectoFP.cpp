@@ -69,6 +69,57 @@ void SistemaDoble(){
         cout << "Debe haber al menos 2 participantes" << endl;
         return;
     }
+
+    Entidad jugadores[JoE];
+    RegistrarJugadores(jugadores, JoE);
+
+    int numGanadores = JoE;
+    int numPerdedores = 0;
+    Entidad ganadores[JoE];
+    Entidad perdedores[JoE];
+
+    for(int i = 0; i < JoE; ++i){
+        ganadores[i] = jugadores[i];
+    }
+
+    while(numGanadores > 1 || (numGanadores == 1 && numPerdedores > 0)){
+        cout<<"Ronda de ganadores:"<<endl;
+        RondaDoble(ganadores, numGanadores);
+
+        if(numPerdedores > 0){
+            cout<<"Ronda de perdedores:"<<endl;
+            RondaDoble(perdedores, numPerdedores, true);
+        }
+
+        for(int i = 0; i < JoE; ++i){
+            if (ganadores[i].perdidas == 1 && !ganadores[i].eliminado){
+                perdedores[numPerdedores++] = ganadores[i];
+                ganadores[i].eliminado = true;
+            }
+        }
+
+        int index = 0;
+        for(int i = 0; i < JoE; ++i) {
+            if(!ganadores[i].eliminado) {
+                ganadores[index++] = ganadores[i];
+            }
+        }
+        numGanadores = index;
+    }
+
+    if(numGanadores == 1 && numPerdedores == 0){
+        cout<<"El ganador del torneo es: "<<ganadores[0].nombre<<endl;
+    } else if (numGanadores == 1 && numPerdedores == 1) {
+        cout<<"Final: "<<ganadores[0].nombre<<" vs "<<perdedores[0].nombre<<endl;
+        string Gan;
+        cout<<"Ingrese el nombre del ganador de esta ronda: ";
+        cin>>Gan;
+        if (Gan == ganadores[0].nombre) {
+            cout<<"El ganador del torneo es: "<<ganadores[0].nombre<<endl;
+        } else {
+            cout<<"El ganador del torneo es: "<<perdedores[0].nombre<<endl;
+        }
+    }
 }
 void SistemaSuizo(){
 }
