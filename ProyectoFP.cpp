@@ -63,6 +63,36 @@ void SistemaSimple(){
 }
 
 void RondaDoble(Entidad Ent[], int& JoE, bool cuadroPerdedores = false){
+    int NewJoE = 0;
+    for(int i = 0; i < JoE; i += 2){
+        if(!Ent[i].eliminado && !Ent[i + 1].eliminado){
+            cout << Ent[i].nombre << " vs " << Ent[i + 1].nombre << endl;
+            string Gan;
+            cout<<"Ingrese el nombre del ganador de esta ronda: ";
+            cin>>Gan;
+            if(Gan == Ent[i].nombre){
+                if(cuadroPerdedores){
+                    Ent[i + 1].eliminado = true;
+                } else {
+                    Ent[i + 1].perdidas++;
+                    if(Ent[i + 1].perdidas == 2){
+                        Ent[i + 1].eliminado = true;
+                    }
+                }
+            } else {
+                if(cuadroPerdedores){
+                    Ent[i].eliminado = true;
+                } else {
+                    Ent[i].perdidas++;
+                    if(Ent[i].perdidas == 2){
+                        Ent[i].eliminado = true;
+                    }
+                }
+            }
+            NewJoE++;
+        }
+    }
+    JoE = NewJoE;
 }
 
 void SistemaDoble(){
