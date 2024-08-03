@@ -62,6 +62,13 @@ void SistemaSimple(){
     }
 }
 void SistemaDoble(){
+    int JoE;
+    cout << "Ingrese el numero de participantes:" << endl;
+    cin >> JoE;
+    if (JoE < 2) {
+        cout << "Debe haber al menos 2 participantes" << endl;
+        return;
+    }
 }
 void SistemaSuizo(){
 }
