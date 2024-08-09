@@ -22,7 +22,8 @@ int main() {
         cout << "Pulse 3 para: Leer los datos de los jugadores" << endl;
         cout << "Pulse 4 para: Comenzar el torneo simple" << endl;
         cout << "Pulse 5 para: Comenzar el torneo con eliminacion doble" << endl;
-        cout << "Pulse 6 para: Salir" << endl;
+        cout << "Pulse 6 para: Comenzar el torneo con eliminacion doble (Propuesta)" << endl;
+        cout << "Pulse 7 para: Salir" << endl;
         cout << "---------------------------------------------------" << endl;
 
         cin >> DecisionP;
@@ -46,6 +47,9 @@ int main() {
                 SistemaDoble();
                 break;
             case 6:
+            	SistemaDoble2();
+            	break;
+            case 7:
                 cout << "Saliendo del programa..." << endl;
                 return 0;
             default:
