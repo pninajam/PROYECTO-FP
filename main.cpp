@@ -10,7 +10,7 @@ int main() {
     int DecisionP;
 
     for (int i = 0; i < 64; ++i) {
-        TS[i].eliminado = true; // Marca todos los jugadores como eliminados inicialmente
+        TS[i].eliminado = true; // Marca todos los jugadores como eliminados inicialmente en caso de ir al case 4 directo
     }
 	
     while (true) {
