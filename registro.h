@@ -26,7 +26,9 @@ int ValidaEntero();
 void Registrar(int &Cupo, int &Jugadores);
 void LeerDatos();
 void EliminarRegistro();
-void SistemaSimple();
+int SistemaSimple();
 void SistemaDoble();
+int Ronda(Persona JActivos[], int &PActivos); // Declaración de Ronda
+void Barajar(Persona JActivos[], int PActivos); //Barajea
 
 #endif // REGISTRO_H

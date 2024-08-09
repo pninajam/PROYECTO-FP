@@ -9,6 +9,10 @@ int main() {
     int Jugad = 1;
     int DecisionP;
 
+    for (int i = 0; i < 64; ++i) {
+        TS[i].eliminado = true; // Marca todos los jugadores como eliminados inicialmente en caso de ir al case 4 directo
+    }
+	
     while (true) {
         cout << "Bienvenido al sistema de emparejamiento" << endl;
         cout << "Antes de comenzar, registre a los participantes" << endl;
@@ -34,7 +38,9 @@ int main() {
                 LeerDatos();
                 break;
             case 4:
-                SistemaSimple();
+                if (SistemaSimple() == -1) {
+                    cout << "No se pudo iniciar el torneo simple debido a la falta de jugadores." << endl;
+                }
                 break;
             case 5:
                 SistemaDoble();
